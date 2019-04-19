@@ -4,6 +4,7 @@ import android.util.Log;
 
 import javax.inject.Inject;
 
+import eu.vanyamihova.androiddagger2.PerActivityScope;
 import eu.vanyamihova.androiddagger2.car.engine.Engine;
 import eu.vanyamihova.androiddagger2.car.wheels.Wheels;
 
@@ -16,6 +17,7 @@ import eu.vanyamihova.androiddagger2.car.wheels.Wheels;
  * @author Vanya Mihova <vanya.mihova89@gmail.com>
  * @since 19.04.2019
  */
+@PerActivityScope
 public class Car {
     private static final String TAG = "Car";
 

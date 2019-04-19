@@ -1,7 +1,6 @@
 package eu.vanyamihova.androiddagger2;
 
 import javax.inject.Named;
-import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
@@ -14,9 +13,9 @@ import eu.vanyamihova.androiddagger2.car.engine.PetrolEngineModule;
  * @author Vanya Mihova <vanya.mihova89@gmail.com>
  * @since 19.04.2019
  */
-@Singleton
-@Component(modules = {WheelsModule.class, PetrolEngineModule.class})
-public interface CarComponent {
+@PerActivityScope
+@Component(dependencies = AppComponent.class, modules = {WheelsModule.class, PetrolEngineModule.class})
+public interface ActivityComponent {
 
     Car provideCar();
 
@@ -31,7 +30,9 @@ public interface CarComponent {
         @BindsInstance
         Builder engineCapacity(@Named("engine capacity") int engineCapacity);
 
-        CarComponent build();
+        Builder appComponent(AppComponent appComponent);
+
+        ActivityComponent build();
     }
 
 }
