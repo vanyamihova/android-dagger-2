@@ -5,6 +5,7 @@ import android.os.Bundle;
 import javax.inject.Inject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import eu.vanyamihova.androiddagger2.car.Car;
 
 public class MainActivity extends AppCompatActivity {
 

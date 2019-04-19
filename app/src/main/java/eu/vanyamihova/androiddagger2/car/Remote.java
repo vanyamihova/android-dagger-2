@@ -1,4 +1,4 @@
-package eu.vanyamihova.androiddagger2;
+package eu.vanyamihova.androiddagger2.car;
 
 import android.util.Log;
 

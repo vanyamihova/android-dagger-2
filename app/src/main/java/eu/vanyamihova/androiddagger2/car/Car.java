@@ -1,8 +1,11 @@
-package eu.vanyamihova.androiddagger2;
+package eu.vanyamihova.androiddagger2.car;
 
 import android.util.Log;
 
 import javax.inject.Inject;
+
+import eu.vanyamihova.androiddagger2.car.engine.Engine;
+import eu.vanyamihova.androiddagger2.car.wheels.Wheels;
 
 /**
  * Order of injection is:
@@ -31,6 +34,7 @@ public class Car {
     }
 
     public void drive() {
+        engine.start();
         Log.d(TAG, "driving...");
     }
 }
