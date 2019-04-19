@@ -1,16 +1,24 @@
 package eu.vanyamihova.androiddagger2.car.engine;
 
-import dagger.Binds;
 import dagger.Module;
+import dagger.Provides;
 
 /**
  * @author Vanya Mihova <vanya.mihova89@gmail.com>
  * @since 19.04.2019
  */
 @Module
-public abstract class DieselEngineModule {
+public class DieselEngineModule {
 
-    @Binds
-    abstract Engine bindEngine(DieselEngine engine);
+    private int horsePower;
+
+    public DieselEngineModule(int horsePower) {
+        this.horsePower = horsePower;
+    }
+
+    @Provides
+    Engine provideEngine() {
+        return new DieselEngine(horsePower);
+    }
 
 }

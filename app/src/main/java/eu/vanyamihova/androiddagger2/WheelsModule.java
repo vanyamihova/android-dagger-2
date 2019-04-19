@@ -11,7 +11,7 @@ import eu.vanyamihova.androiddagger2.car.wheels.Wheels;
  * @since 19.04.2019
  */
 @Module
-public class WheelsModule {
+public abstract class WheelsModule {
 
     @Provides
     static Rims provideRims() {
